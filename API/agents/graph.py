@@ -28,11 +28,11 @@ def RAG_agent(state: agent_state)->agent_state:
 builder = StateGraph(agent_state)
 
 builder.add_node("agent_node", agent_node)
-builder.add_node("tool_agent", tool_agent)
+builder.add_node("RAG_agent", RAG_agent)
 
 builder.add_edge(START, "agent_node")
-builder.add_edge("agent_node", "tool_agent")
-builder.add_edge("tool_agent",END)
+builder.add_edge("agent_node", "RAG_agent")
+builder.add_edge("RAG_agent",END)
 
 graph = builder.compile()
 
